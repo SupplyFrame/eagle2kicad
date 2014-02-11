@@ -264,7 +264,7 @@ string replace_string(string s1, string s2, string s3) {
 // Global variables
 //------------------------------------------------------
 string g_lib_name ;
-real   g_Fact = 254;        // global uMeter to uInch conversion factor
+real   g_Fact = 254*32;     // global uMeter to uInch conversion factor
 int    g_missingPrefix = 0; // global Indicator if an eagle devices hasn't got an prefix
 
 //------------------------------------------------------
