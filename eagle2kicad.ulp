@@ -858,6 +858,20 @@ string replaceChar(string text,char old,char new,int i) {
 	}
 	return text;
 }
+string replaceString(string text,char old,string new,int i) {
+string new_text;
+	if (text=="") { 
+		return "";
+	}
+	for (;i<strlen(text);i++) {
+		if(text[i]==old) {
+			new_text += new;
+		} else {
+			new_text += text[i];
+		}
+	}
+	return new_text;
+}
 //------------------------------------------------------
 //write kicad schematic dotted wire notes
 //------------------------------------------------------
@@ -1113,7 +1127,7 @@ void write_kicad_text_notes( UL_SHEET S )
       break;
       }
       printf("Text Notes %d %d %d %d ~\n", posX, -posY, orient, fontSize);
-      printf("%s\n", replaceChar(textString,'\n',' ',0));
+      printf("%s\n", replaceString(textString,'\n',"\\n",0));
    } 
 }
 
